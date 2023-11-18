@@ -118,19 +118,3 @@ BOOL FAR PASCAL TimesDlgProc( HWND hDlg, unsigned uMsg, WORD wParam, LONG lParam
     return FALSE;
 }
 
-BOOL FAR PASCAL AboutDlgProc( HWND hDlg, unsigned uMsg, WORD wParam, LONG lParam )
-{
-    switch( uMsg ) {
-    case WM_INITDIALOG:
-        return TRUE;
-
-    case WM_COMMAND:
-        switch( LOWORD( wParam ) ) {
-        case IDOK:
-            EndDialog( hDlg, 0 );
-            return TRUE;
-        }
-        break;
-    }
-    return FALSE;
-}

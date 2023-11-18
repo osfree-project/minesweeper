@@ -136,6 +136,7 @@ BOOL FAR PASCAL CongratsDlgProc( HWND hDlg, unsigned uMsg, WORD wParam, LONG lPa
 
 BOOL FAR PASCAL TimesDlgProc( HWND hDlg, unsigned uMsg, WORD wParam, LONG lParam );
 
-BOOL FAR PASCAL AboutDlgProc( HWND hDlg, unsigned uMsg, WORD wParam, LONG lParam );
+int WINAPI ShellAbout(HWND hWnd, LPCSTR lpszCaption, LPCSTR lpszAboutText,
+                HICON hIcon);
 
 /* end of header */

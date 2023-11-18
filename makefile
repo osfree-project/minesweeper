@@ -11,11 +11,12 @@ srcfiles = $(p)winemine$(e) $(p)winemdlg$(e)
 
 # defines additional options for C compiler
 ADD_COPT = -sg -DDEBUG=1
+ADD_LINKOPT = LIB commdlg.lib
+
 EXPORTS =      MainProc, &
                CustomDlgProc, &
                CongratsDlgProc, &
-               TimesDlgProc, &
-               AboutDlgProc
+               TimesDlgProc
 
 HEAPSIZE = 8k
 STACKSIZE = 24k

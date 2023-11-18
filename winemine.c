@@ -886,7 +886,6 @@ LRESULT CALLBACK MainProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
         board.lpCustomDlgProc = MakeProcInstance((FARPROC)CustomDlgProc, board.hInst);
         board.lpCongratsDlgProc = MakeProcInstance((FARPROC)CongratsDlgProc, board.hInst);
         board.lpTimesDlgProc = MakeProcInstance((FARPROC)TimesDlgProc, board.hInst);
-        board.lpAboutDlgProc = MakeProcInstance((FARPROC)AboutDlgProc, board.hInst);
         
         InitBoard( &board );
         CreateBoard( &board );
@@ -1053,8 +1052,9 @@ LRESULT CALLBACK MainProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 
         case IDM_ABOUT:
         {
-            if (DialogBox( board.hInst, "DLG_ABOUT", board.hWnd,
-                  board.lpAboutDlgProc) != 0)     
+		char szApp[120];
+            LoadString(g_hInst, IDS_APPNAME, szApp, sizeof(szApp));
+            ShellAbout(hWnd, szApp, "Copyright 2000 Joshua Thielen\nWindows 1.x/2.x port 2013 by Nathan Lineback", 0);
             return 0;
         }
         default:

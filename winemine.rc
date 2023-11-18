@@ -116,20 +116,3 @@ BEGIN
     PUSHBUTTON      "Cancel", IDCANCEL,  40,  50,  50,  15 
 END
 
-DLG_ABOUT DIALOG  62, 9, 173, 129
-STYLE   WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_POPUP 
-CAPTION "About WineMine"
-BEGIN
-    CONTROL "WineMine" 0, "static", SS_ICON | WS_CHILD, 7, 5, 16, 17
-    LTEXT "WineMine for Windows 1.x/2.x", -1, 32, 6, 128, 10
-    LTEXT "Version 1.00", -1, 32, 16, 128, 10
-    LTEXT "Copyright 2000 Joshua Thielen", -1, 32, 28, 128, 10
-    LTEXT "Windows 1.x/2.x port 2013 by", -1, 32, 38, 128, 10
-    LTEXT "Nathan Lineback", -1, 32, 48, 128, 10
-    CONTROL "" 6, "static", SS_BLACKFRAME | WS_CHILD, 12, 84, 144, 1
-    LTEXT "For more information, visit Toastytech.com", -1, 32, 90, 120, 20
-    DEFPUSHBUTTON "OK", IDOK, 126, 110, 41, 13
-    LTEXT "This software is licensed under the LGPL", -1, 32, 64, 118, 18
-END
-
-
