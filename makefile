@@ -1,32 +1,20 @@
 #
-# A Makefile for WinOS/2 Program Manager
-# (c) osFree project,
+# A Makefile for osFree Janus Mine Sweeper
+# (c) osFree project
 #
 
-PROJ  = winmine1
-PROJ1 = winmine
-TRGT = $(PROJ1).exe
-DESC = Windows Mine Sweeper
-srcfiles = $(p)winemine$(e) $(p)winemdlg$(e)
+TARGET_API=WIN
+TARGET_VERSION=310
+DESCRIPTION = osFree Janus Mine Sweeper
+SOURCES = winemine winemdlg
+LIBS = commdlg
 
-# defines additional options for C compiler
 ADD_COPT = -sg -DDEBUG=1
-ADD_LINKOPT = LIB commdlg.lib
 
 EXPORTS =      MainProc, &
                CustomDlgProc, &
                CongratsDlgProc, &
                TimesDlgProc
 
-HEAPSIZE = 8k
-STACKSIZE = 24k
+!include $(%ROOT)tools/mk/build.mk
 
-!include $(%ROOT)tools/mk/appsw16.mk
-
-TARGETS = $(PATH)$(PROJ1).exe
-
-.ico: $(MYDIR)res
-
-$(PATH)$(PROJ1).exe: $(PATH)$(PROJ).exe $(MYDIR)winemine.rc
- @$(SAY) RESCMP   $^. $(LOG)
- @$(RC) -q -bt=windows $]@ $[@ -fe=$@ -fo=$^@ -i=$(MYDIR) -i=$(%WATCOM)$(SEP)h$(SEP)win
