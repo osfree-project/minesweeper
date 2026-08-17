@@ -6,9 +6,8 @@
 DESCRIPTION = osFree Janus Mine Sweeper
 TARGET_VERSION=310
 SOURCES = winemine winemdlg
-LIBS = commdlg
 
-ADD_COPT = -sg -DDEBUG=1
+ADD_COPT = -DDEBUG=1
 
 EXPORTS =      MainProc, &
                CustomDlgProc, &
