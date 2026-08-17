@@ -3,9 +3,8 @@
 # (c) osFree project
 #
 
-TARGET_API=WIN
-TARGET_VERSION=310
 DESCRIPTION = osFree Janus Mine Sweeper
+TARGET_VERSION=310
 SOURCES = winemine winemdlg
 LIBS = commdlg
 
